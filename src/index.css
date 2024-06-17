@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --grayWhite: #f1f1f1;
+  --tw-gradient-stops: rgba(0, 0, 0, 0.7) 20%, rgba(0, 0, 0, 0);
+  --base-color: #fe6500;
+  --transparent-white: #ffffff14;
+  --feedback-color: #e22808;
+  --success: #3cd188;
+  --secondary: #ff7f5d;
+  --warning: #efae4e;
+  --base-primary: #687cfe;
+  --info: #0ac7fb;
+  --danger: #f7666e;
+  --success-bg: #3cd1882e;
+  --secondary-bg: #ff7f5d1a;
+  --warning-bg: #efae4e2e;
+  --base-primary-bg: #687cfe1a;
+  --info-bg: #0ac7fb2e;
+  --danger-bg: #f7666e1a;
+  --gray-bg: #374151;
+  --transparent-gray: #374151c2;
+  --black-background: #131313;
+  --card-bg: #1b1b1b;
+  --text-gray: #9b9b9b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: var(--white); */
+  font-family: "DM Sans", sans-serif;
+}
+
+.montserrat-all {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+#root,
+body {
+  background: var(--black);
+  width: 100dvw;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.black-bg {
+  background-color: var(--black-background);
+}
+
+.gray-bg {
+  background-color: var(--gray-bg);
+}
+
+.card {
+  background-color: var(--card-bg);
+}
+
+.gray-text {
+  color: #9b9b9b;
+}
