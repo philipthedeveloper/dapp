@@ -5,7 +5,7 @@ type Props = {};
 export const Intro = ({}: Props) => {
   return (
     <div className="min-h-dvh flex justify-center items-center backdrop-blur-sm w-[90%] mx-auto">
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center mt-16 md:mt-20">
         <h1 className="text-gray-300 text-3xl sm:text-5xl font-medium sm:font-semibold montserrat-all text-center mb-6">
           Swap anytime, <br />
           anywhere.
