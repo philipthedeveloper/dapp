@@ -49,6 +49,11 @@ const SideNav = ({ onClose, isOpen }: SideNavProps) => {
           </NavItem>
         ))}
       </NavList>
+      <div className="mt-auto w-full px-4 mb-8 ">
+        <button className="uppercase border border-gray-700 text-gray-300 text-xs px-6 py-3 cursor-pointer hover:bg-gray-700 transition-colors rounded-md w-full">
+          Connect wallet
+        </button>
+      </div>
     </SideNavContainer>
   );
 };
