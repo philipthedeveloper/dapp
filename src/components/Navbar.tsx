@@ -1,27 +1,27 @@
 import { useMemo, useRef, useState } from "react";
-import dappLogo from "../assets/icons/logo.svg";
 import { useScrollPosition } from "../hooks";
 import SideNav from "./SideNav";
+import { Link } from "react-router-dom";
 
 export const navLinks = [
   {
     name: "Markets",
-    path: "#market-section",
+    path: "/market",
   },
-  { name: "Swap", path: "#swap-section" },
+  { name: "Swap", path: "/swap" },
   {
     name: "AMM",
-    path: "#amm-section",
+    path: "/amm",
   },
   {
     name: "Buy & Sell Crypto",
-    path: "#buy-and-sell",
+    path: "/buyandsell",
   },
-  {
-    name: "Legal",
-    path: "#legal-section",
-  },
-  { name: "Support", path: "#support-section" },
+  // {
+  //   name: "Legal",
+  //   path: "#legal-section",
+  // },
+  // { name: "Support", path: "#support-section" },
 ];
 
 const Navbar = () => {
@@ -54,20 +54,22 @@ const Navbar = () => {
     >
       <div className="w-full flex items-center justify-between py-3 px-6">
         {/* <img src={dappLogo} /> */}
-        <p
-          aria-roledescription="logo"
-          className="text-yellow-500 montserrat-all font-bold"
-        >
-          PeeSwap
-        </p>
+        <Link to={"/"}>
+          <p
+            aria-roledescription="logo"
+            className="text-yellow-500 montserrat-all font-bold"
+          >
+            PeeSwap
+          </p>
+        </Link>
         <div className="justify-end items-center gap-5 hidden md:flex">
           {navLinks.map((linkItem) => (
-            <a
-              href={linkItem.path}
+            <Link
+              to={linkItem.path}
               className="text-gray-300 montserrat-all font-medium text-xs"
             >
               {linkItem.name}
-            </a>
+            </Link>
           ))}
           <button className="uppercase border border-yellow-500 text-yellow-300 hover:text-white text-xs px-6 py-2 cursor-pointer ml-6 hover:bg-yellow-500 transition-colors rounded-md">
             Connect wallet
