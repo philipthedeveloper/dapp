@@ -50,7 +50,7 @@ const SideNav = ({ onClose, isOpen }: SideNavProps) => {
         ))}
       </NavList>
       <div className="mt-auto w-full px-4 mb-8 ">
-        <button className="uppercase border border-gray-700 text-gray-300 text-xs px-6 py-3 cursor-pointer hover:bg-gray-700 transition-colors rounded-md w-full">
+        <button className="uppercase border border-yellow-500 text-yellow-500 hover:text-white text-xs px-6 py-3 cursor-pointer hover:bg-yellow-500 transition-colors rounded-md w-full">
           Connect wallet
         </button>
       </div>

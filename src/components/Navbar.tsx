@@ -52,7 +52,7 @@ const Navbar = () => {
       className="w-full overflow-hidden z-50 h-16 fixed bg-[#131313] bg-opacity-0 top-0 left-0 transition-colors duration-300 flex items-center border-b-gray-700 border-b"
       ref={navbarRef}
     >
-      <div className="w-full flex item-center justify-between py-3 px-6">
+      <div className="w-full flex items-center justify-between py-3 px-6">
         {/* <img src={dappLogo} /> */}
         <p
           aria-roledescription="logo"
