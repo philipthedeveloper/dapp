@@ -77,3 +77,16 @@ html {
   background-color: var(--transparent-white);
   color: var(--transparent-white);
 }
+
+.custom-scrollbar::-webkit-scrollbar {
+  appearance: none;
+  width: 6px;
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  width: 6px;
+  background-color: #eab308;
+  border-radius: 1rem;
+}
