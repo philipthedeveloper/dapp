@@ -12,7 +12,7 @@ export const BuyAndSell = ({}: Props) => {
 
   return (
     <>
-      <div className="min-h-dvh flex flex-col gap-16 md:flex-row md:gap-6 justify-center md:justify-center items-center w-[90%] mx-auto mt-10 md:mt-0">
+      <div className="min-h-dvh flex flex-col gap-16 md:flex-row md:gap-6 justify-center md:justify-center items-center w-[90%] mx-auto my-24 sm:mt-16 sm:mb-0 md:mt-0">
         {/* Left container */}
         <div className="md:flex-1 max-w-[500px]">
           <h2 className="text-white font-bold text-2xl md:text-4xl mb-4 montserrat-all">
