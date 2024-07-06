@@ -16,7 +16,7 @@ export const TradeCard = ({
 }: Props) => {
   return (
     <div className="card px-4 py-5 rounded-md md:rounded-lg w-full">
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2">
         {/* Tag text */}
         <p className="text-[#9b9b9b] montserrat-all text-xs font-medium md:base mb-2">
           {tagText}
