@@ -3,85 +3,82 @@ import daiLogo from "../assets/icons/dai.png";
 import { AssetDialog } from "@/components/AssetDialog";
 import { useState } from "react";
 import { Asset, assets } from "@/data";
+import { SwapCard } from "@/components/swap/SwapCard";
+import { ToleranceLevel } from "@/components/swap/ToleranceLevel";
 
 type Props = {};
 export const Swap = ({}: Props) => {
-  const [toBuy, setToBuy] = useState(assets[0]);
-  const [toSell, setToSell] = useState(assets[1]);
+  const [swapTo, setSwapTo] = useState(assets[0]);
+  const [swapFrom, setSwapFrom] = useState(assets[1]);
+  const [toleranceLevel, setToleranceLevel] = useState(0.5);
 
-  const changeBuyAsset = (data: Asset) => setToBuy(data);
-  const changeSellAsset = (data: Asset) => setToSell(data);
+  const changeToAsset = (data: Asset) => setSwapTo(data);
+  const changeFromAsset = (data: Asset) => setSwapFrom(data);
 
   const reverseTradeOrder = () => {
-    const buying = { ...toBuy };
-    const selling = { ...toSell };
-    setToSell(buying);
-    setToBuy(selling);
+    const buying = { ...swapTo };
+    const selling = { ...swapFrom };
+    setSwapFrom(buying);
+    setSwapTo(selling);
   };
 
   return (
     <>
       <div className="min-h-dvh flex justify-center items-center backdrop-blur-sm w-[90%] mx-auto flex-col">
-        <div className="mb-2 w-[90%] max-w-[400px] sm:max-w-[450px] md:max-w-[500px]">
-          <button className="text-gray-200 card px-6 py-2 rounded-full montserrat-all text-sm font-medium">
+        <div className="mb-2 w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px]">
+          <button className="text-gray-200 card px-6 py-2 rounded-lg montserrat-all text-sm font-medium">
             Swap
           </button>
         </div>
-        <div className="black-bg p-2 rounded-2xl md:rounded-3xl w-[90%] max-w-[400px] sm:max-w-[450px] md:max-w-[500px] flex flex-col gap-0 relative">
+        <div className="black-bg p-2 rounded-lg md:rounded-xl w-full max-w-[400px] sm:max-w-[450px] md:max-w-[500px] flex flex-col gap-0 relative">
           {/* Source coin */}
-          <div className="card p-4 rounded-xl md:rounded-2xl w-full hover:border hover:border-gray-800">
-            <p className="text-[#9b9b9b] montserrat-all text-xs font-medium md:base">
-              From
-            </p>
-            <div className="my-2 flex justify-between items-center">
-              {/* <p className="text-[#9b9b9b] text-2xl md:text-3xl montserrat-all font-medium">
-                0
-              </p> */}
-              <input
-                type="text"
-                className="border-none outline-none text-[#9b9b9b] text-2xl md:text-3xl montserrat-all font-medium bg-transparent flex-1 inline-block max-w-24"
-                placeholder="0"
-              />
-              <AssetDialog
-                currentAsset={toSell}
-                onChangeSelectedAsset={changeSellAsset}
-              />
-            </div>
-          </div>
+          <SwapCard
+            currentAsset={swapFrom}
+            changeCurrentAsset={changeFromAsset}
+          />
 
           {/* Reverse trade */}
-          <div className="relative h-0 mb-1">
+          <div className="relative h-0 mb-2">
             <button
-              className="card rounded-xl w-10 h-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-[#131313] flex justify-center items-center"
+              className="bg-base-color rounded-full w-14 h-14 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-8 border-[#131313] flex justify-center items-center"
               onClick={reverseTradeOrder}
             >
-              <i className="fi fi-rr-arrow-small-down text-white flex text-xl md:text-2xl"></i>
+              <i className="bx bx-sort text-white flex text-xl"></i>
             </button>
           </div>
 
           {/* Destination coin */}
-          <div className="card p-4 rounded-xl md:rounded-2xl w-full hover:border hover:border-gray-800">
-            <p className="text-[#9b9b9b] montserrat-all text-xs font-medium md:base">
-              To
+          <SwapCard currentAsset={swapTo} changeCurrentAsset={changeToAsset} />
+
+          {/* Aside */}
+          <aside className="flex flex-col items-center gap-1 my-7">
+            {/* Marker price */}
+            <p className="flex items-center gap-4">
+              <span className="flex items-center gap-1 text-xs montserrat-all font-semibold text-gray-500">
+                <i className="bx bx-trending-up flex text-base font-bold"></i>
+                Trade
+              </span>
+              <span className="text-gray-300 montserrat-all text-xs font-semibold">
+                1 {swapFrom.abbr} = {(Math.random() * 8).toFixed(1)}{" "}
+                {swapTo.abbr}
+              </span>
             </p>
-            <div className="my-2 flex justify-between items-center">
-              <input
-                type="text"
-                className="border-none outline-none text-[#9b9b9b] text-2xl md:text-3xl montserrat-all font-medium bg-transparent flex-1 inline-block max-w-24"
-                placeholder="0"
-              />
-              <AssetDialog
-                currentAsset={toBuy}
-                onChangeSelectedAsset={changeBuyAsset}
-              />
-            </div>
-          </div>
-          {/* <div className="card p-4 rounded-xl md:rounded-2xl w-full mt-1">
-            <p className="text-[#9b9b9b] montserrat-all text-xl font-semibold text-center opacity-60">
-              Connecting wallet...
+
+            {/* Tolerance level */}
+            <p className="text-white flex items-center">
+              <span className="flex items-center gap-1 text-sm montserrat-all font-semibold text-gray-500">
+                Slippage tolerance ={" "}
+                <span>
+                  <ToleranceLevel
+                    toleranceLevel={toleranceLevel}
+                    updateToleranceLevel={setToleranceLevel}
+                  />
+                </span>
+              </span>
             </p>
-          </div> */}
-          <button className="uppercase rounded-xl md:rounded-2xl mt-6 py-4 text-gray-300 montserrat-all font-medium bg-yellow-500 duration-500 transition hover:bg-opacity-80">
+          </aside>
+
+          <button className="uppercase rounded-md md:rounded-lg mt-2 py-4 text-gray-300 montserrat-all font-medium bg-yellow-500 duration-500 transition hover:bg-opacity-80">
             Connect wallet
           </button>
         </div>

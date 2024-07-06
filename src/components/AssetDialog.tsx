@@ -36,15 +36,20 @@ export function AssetDialog({
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <button className="rounded-full black-bg p-1 gap-1 md:p-2 md:gap-2 flex items-center border-[1px] border-gray-800">
+        <button className="rounded-md gap-1 md:gap-2 flex items-center hover:bg-[#222222] duration-300 transition-colors">
           <img
             src={currentAsset.imgUrl}
-            className="w-4 h-4 rounded-full object-contain md:w-7 md:h-7"
+            className="w-6 h-6 rounded-full object-contain md:w-9 md:h-9"
           />
-          <span className="text-white font-medium uppercase text-sm md:text-base">
-            {currentAsset.abbr}
-          </span>
-          <i className="fi fi-rr-angle-small-down text-white flex text-xl md:text-2xl"></i>
+          <div className="flex flex-col items-start gap-[2px]">
+            <span className="text-white font-medium text-xs md:text-sm montserrat-all">
+              {currentAsset.name}
+            </span>
+            <span className="text-gray-500 font-semibold uppercase text-xs montserrat-all">
+              {currentAsset.abbr}
+            </span>
+          </div>
+          <i className="fi fi-rr-angle-small-down text-white flex text-base md:text-xl"></i>
         </button>
       </DialogTrigger>
       <DialogContent
