@@ -5,6 +5,10 @@ import peeIcon from "../../assets/icons/peeswap.png";
 import lidoIcon from "../../assets/icons/lido.png";
 import ExchangeCard from "./ExchangeCard";
 import walletImg from "../../assets/images/wallet.png";
+import stripeOne from "@/assets/images/stripe-1.png";
+import stripeTwo from "@/assets/images/stripe-2.png";
+import stripeThree from "@/assets/images/stripe-3.png";
+import stripeFour from "@/assets/images/stripe-7.png";
 
 const exchanges = [
   {
@@ -41,6 +45,41 @@ const exchanges = [
   },
 ];
 
+const defiData = [
+  {
+    heading: "Web app",
+    description:
+      "Swapping made simple. Access thousands of tokens on 8+ chains",
+    color: "blue",
+    badgeIcon: "fi fi-sr-computer",
+    bgImage: stripeTwo,
+  },
+  {
+    heading: "Peeswap wallet",
+    description:
+      "The wallet built for swapping. Available for iOS and Android.",
+    color: "pink",
+    badgeIcon: "fi fi-sr-wallet",
+    bgImage: stripeOne,
+  },
+  {
+    heading: "Developer docs",
+    description: "Build the next generation of open applications and tools.",
+    color: "green",
+    badgeIcon: "fi fi-sr-api",
+    bgImage: stripeThree,
+  },
+  {
+    heading: "Liquidity",
+    description:
+      "Provide liquidity to pools on the Peeswap Protocol and earn fees on swaps.",
+    color: "purple",
+    badgeIcon: "fi fi-ss-chart-simple",
+    bgImage: stripeFour,
+    backgroundClassNames: "rotate-[-60deg]",
+  },
+];
+
 type Props = {};
 
 export const Defi = ({}: Props) => {
@@ -50,8 +89,11 @@ export const Defi = ({}: Props) => {
         <h1 className="text-white montserrat-all font-medium text-2xl md:text-3xl">
           Go direct to DeFi
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <DefiCard
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-6">
+          {defiData.map((data) => (
+            <DefiCard {...data} />
+          ))}
+          {/* <DefiCard
             color={"blue"}
             badgeIcon={"fi fi-sr-computer"}
             badgeText={"Web app"}
@@ -101,7 +143,7 @@ export const Defi = ({}: Props) => {
               Provide liquidity to pools on the Peeswap Protocol and earn fees
               on swaps.
             </h2>
-          </DefiCard>
+          </DefiCard> */}
         </div>
       </div>
     </div>
