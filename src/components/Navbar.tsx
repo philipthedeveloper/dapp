@@ -9,10 +9,10 @@ export const navLinks = [
     path: "/market",
   },
   { name: "Swap", path: "/swap" },
-  {
-    name: "AMM",
-    path: "/amm",
-  },
+  // {
+  //   name: "AMM",
+  //   path: "/amm",
+  // },
   {
     name: "Buy & Sell Crypto",
     path: "/buyandsell",

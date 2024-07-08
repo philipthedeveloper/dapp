@@ -29,6 +29,42 @@ import XRP from "@/assets/currencies/XRP.png";
 import XTZ from "@/assets/currencies/XTZ.png";
 import ZRX from "@/assets/currencies/ZRX.png";
 
+// MARKET PAIRS
+import blnd from "@/assets/market-pair/blnd.png";
+import btc from "@/assets/market-pair/btc.png";
+import btcln from "@/assets/market-pair/btcln.png";
+import cny from "@/assets/market-pair/cny.png";
+import eth from "@/assets/market-pair/eth.png";
+import lsp from "@/assets/market-pair/lsp.png";
+import rio from "@/assets/market-pair/rio.png";
+import usdc from "@/assets/market-pair/usdc.png";
+import velo from "@/assets/market-pair/velo.svg";
+import xlm from "@/assets/market-pair/xlm.svg";
+import xrp from "@/assets/market-pair/xrp.png";
+import xxa from "@/assets/market-pair/xxa.png";
+import yxlm from "@/assets/market-pair/yxlm.png";
+import ybtc from "@/assets/market-pair/ybtc.png";
+import ltc from "@/assets/market-pair/ltc.png";
+import brl from "@/assets/market-pair/brl.png";
+
+export type PairType =
+  | "blnd"
+  | "btc"
+  | "btcln"
+  | "cny"
+  | "eth"
+  | "lsp"
+  | "rio"
+  | "usdc"
+  | "velo"
+  | "xlm"
+  | "xrp"
+  | "xxa"
+  | "yxlm"
+  | "ybtc"
+  | "ltc"
+  | "brl";
+
 export type Currency = {
   name: string;
   imgUrl: string;
@@ -190,3 +226,86 @@ export const receivingCurrencies: Currency[] = [
     imgUrl: ZRX,
   },
 ];
+
+export const marketCurrenices: Record<PairType, Currency> = {
+  blnd: {
+    name: "BLND",
+    abbr: "BLND",
+    imgUrl: blnd,
+  },
+  btc: {
+    name: "BTC",
+    abbr: "BTC",
+    imgUrl: btc,
+  },
+  btcln: {
+    name: "BTCLN",
+    abbr: "BTCLN",
+    imgUrl: btcln,
+  },
+  cny: {
+    name: "CNY",
+    abbr: "CNY",
+    imgUrl: cny,
+  },
+  eth: {
+    name: "ETH",
+    abbr: "ETH",
+    imgUrl: eth,
+  },
+  lsp: {
+    name: "LSP",
+    abbr: "LSP",
+    imgUrl: lsp,
+  },
+  rio: {
+    name: "RIO",
+    abbr: "RIO",
+    imgUrl: rio,
+  },
+  usdc: {
+    name: "USDC",
+    abbr: "USDC",
+    imgUrl: usdc,
+  },
+  velo: {
+    name: "VELO",
+    abbr: "VELO",
+    imgUrl: velo,
+  },
+  xlm: {
+    name: "XLM",
+    abbr: "XLM",
+    imgUrl: xlm,
+  },
+  xrp: {
+    name: "XRP",
+    abbr: "XRP",
+    imgUrl: xrp,
+  },
+  xxa: {
+    name: "XXA",
+    abbr: "XXA",
+    imgUrl: xxa,
+  },
+  yxlm: {
+    name: "yXLM",
+    abbr: "yXLM",
+    imgUrl: yxlm,
+  },
+  ybtc: {
+    name: "yBTC",
+    abbr: "yBTC",
+    imgUrl: ybtc,
+  },
+  ltc: {
+    name: "LTC",
+    abbr: "LTC",
+    imgUrl: ltc,
+  },
+  brl: {
+    name: "BRL",
+    abbr: "BRL",
+    imgUrl: brl,
+  },
+};

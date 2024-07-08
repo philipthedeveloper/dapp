@@ -91,6 +91,7 @@ html {
   width: 6px;
   background-color: var(--card-bg);
   border-radius: 1rem;
+  position: absolute;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {

@@ -16,10 +16,10 @@ export const BuyAndSell = ({}: Props) => {
       <div className="min-h-dvh flex flex-col gap-16 md:flex-row md:gap-6 justify-center md:justify-center items-center w-[90%] mx-auto my-24 sm:mt-16 sm:mb-0 md:mt-0">
         {/* Left container */}
         <div className="md:flex-1 max-w-[500px]">
-          <h2 className="text-white font-bold text-2xl md:text-4xl mb-4 montserrat-all">
+          <h2 className="text-white font-bold text-2xl md:text-4xl mb-4 montserrat-all leading-relaxed md:leading-relaxed">
             Buy Lumens (Stellar) instantly
           </h2>
-          <p className="text-gray-300 montserrat-all max-w-[450px] leading-lose md:leading-loose text-sm md:text-base">
+          <p className="text-gray-300 montserrat-all max-w-[450px] leading-lose md:leading-loose text-xs md:text-sm">
             StellarX is a trusted place where you can easily buy Lumens
             (Stellar) and other cryptocurrencies instantly using a credit or
             debit card, bank transfer, Apple Pay, Google Pay, and more.
