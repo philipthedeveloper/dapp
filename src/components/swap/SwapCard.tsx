@@ -7,6 +7,23 @@ type Props = {
   changeCurrentAsset: (asset: Asset) => any;
 };
 export const SwapCard = ({ currentAsset, changeCurrentAsset }: Props) => {
+  const [quantity, setQuantity] = useState("");
+
+  const onChange = (e: any) => {
+    // Remove any non-digit or non-decimal point characters
+    let formattedValue = e.target.value.replace(/[^\d+.]/gm, "");
+
+    // Remove extra decimal points, if any
+    const parts = formattedValue.split(".");
+    if (parts.length > 2) {
+      formattedValue = parts[0] + "." + parts.slice(1).join("");
+    }
+
+    // Ensure no leading zeroes unless the number is zero or a decimal part
+    formattedValue = formattedValue.replace(/^0+(?!$|\.|0)/, "");
+    setQuantity(formattedValue);
+  };
+
   return (
     <div className="card px-4 py-5 rounded-md md:rounded-lg w-full">
       <div className="flex flex-col gap-2">
@@ -26,6 +43,8 @@ export const SwapCard = ({ currentAsset, changeCurrentAsset }: Props) => {
               type="text"
               className="border-none outline-none text-white text-2xl md:text-3xl montserrat-all font-medium bg-transparent placeholder:text-gray-300 text-right w-full"
               placeholder="0.00"
+              value={quantity}
+              onChange={onChange}
             />
           </div>
         </header>
