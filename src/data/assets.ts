@@ -9,6 +9,7 @@ import celo from "@/assets/asset-icons/celo.png";
 import blast from "@/assets/asset-icons/blast.png";
 import zora from "@/assets/asset-icons/zora.png";
 import zksync from "@/assets/asset-icons/zksync.png";
+import xlm from "@/assets/asset-icons/xlm.svg";
 
 export type Asset = {
   name: string;
@@ -21,6 +22,11 @@ export const assets: Asset[] = [
     name: "Ethereum",
     imgUrl: ethereum,
     abbr: "ETH",
+  },
+  {
+    name: "XLM Native",
+    imgUrl: xlm,
+    abbr: "XLM",
   },
   {
     name: "Arbitrum",
